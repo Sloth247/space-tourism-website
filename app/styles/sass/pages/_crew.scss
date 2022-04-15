@@ -1,0 +1,70 @@
+@use '../abstracts/mixins';
+@use '../abstracts/variables';
+
+.crew {
+  &__title {
+    font-family: variables.$font-primary;
+    color: variables.$color-white;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 19px;
+    letter-spacing: 2.7px;
+    text-transform: uppercase;
+    margin-top: 1.5rem;
+    margin-bottom: 2rem;
+    & span {
+      opacity: 0.25;
+      font-weight: 700;
+      margin-right: 0.875rem;
+    }
+  }
+  &__hero-container {
+    width: 54.16%;
+    margin: 0 auto;
+  }
+  &__btn-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 2rem;
+    border-top: 1px solid #383b4b;
+    padding-bottom: 2rem;
+  }
+  &__btn {
+    width: 10px;
+    height: 10px;
+    background-color: variables.$color-white;
+    border-radius: 50%;
+    opacity: 0.17;
+    &.active {
+      opacity: 1;
+    }
+    &:not(:last-child) {
+      margin-right: 1rem;
+    }
+  }
+  &__role {
+    font-family: variables.$font-secondary;
+    font-size: 1rem;
+    font-weight: 400;
+    color: variables.$color-white;
+    opacity: 0.5;
+    text-transform: uppercase;
+    line-height: 18px;
+    margin-bottom: 0.5rem;
+  }
+  &__name {
+    font-family: variables.$font-secondary;
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: variables.$color-white;
+    text-transform: uppercase;
+    line-height: 1.75rem;
+    margin-bottom: 1rem;
+  }
+  &__bio {
+    line-height: 25px;
+    font-weight: 400;
+    margin-bottom: 5rem;
+  }
+}

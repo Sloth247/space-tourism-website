@@ -1,0 +1,76 @@
+@use '../abstracts/mixins';
+@use '../abstracts/variables';
+
+.technology {
+  &__title {
+    font-family: variables.$font-primary;
+    color: variables.$color-white;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 19px;
+    letter-spacing: 2.7px;
+    text-transform: uppercase;
+    margin-top: 1.5rem;
+    margin-bottom: 2rem;
+    & span {
+      opacity: 0.25;
+      font-weight: 700;
+      margin-right: 0.875rem;
+    }
+  }
+  &__hero-container {
+    margin-left: -1.6rem;
+    margin-right: -1.6rem;
+    margin-bottom: 2rem;
+  }
+  &__btn-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2rem;
+  }
+  &__btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    color: variables.$color-white;
+    border: 1px solid variables.$color-white;
+    font-family: variables.$font-secondary;
+    line-height: 18px;
+    border-radius: 50%;
+    width: 2.5rem;
+    height: 2.5rem;
+    &:not(:last-child) {
+      margin-right: 1rem;
+    }
+    &.active {
+      background-color: variables.$color-white;
+      color: variables.$color-black;
+    }
+  }
+  &__sub-title {
+    font-family: variables.$font-primary;
+    font-size: 0.875rem;
+    font-weight: 400;
+    color: variables.$color-light-purple;
+    text-transform: uppercase;
+    line-height: 17px;
+    letter-spacing: 2.3625px;
+    margin-bottom: 0.5rem;
+  }
+  &__name {
+    font-family: variables.$font-secondary;
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: variables.$color-white;
+    text-transform: uppercase;
+    line-height: 1.75rem;
+    margin-bottom: 1rem;
+  }
+  &__description {
+    line-height: 25px;
+    font-weight: 400;
+    margin-bottom: 3.5625rem;
+  }
+}

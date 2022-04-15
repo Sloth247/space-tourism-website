@@ -1,0 +1,95 @@
+@use '../abstracts/mixins';
+@use '../abstracts/variables';
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  &__container {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: -15.875rem;
+    width: 15.875rem;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(33px);
+    z-index: 4;
+    &.active {
+      right: 0;
+    }
+  }
+  &__menu {
+    margin-top: 7.375rem;
+
+    & li:not(:last-child) {
+      margin-bottom: 2rem;
+    }
+    & li {
+      font-family: variables.$font-primary;
+      text-transform: uppercase;
+      color: variables.$color-white;
+      line-height: 19px;
+      letter-spacing: 2.7px;
+
+      & span {
+        font-weight: bold;
+        margin-right: 0.6875rem;
+      }
+    }
+  }
+}
+
+.menu-btn {
+  z-index: 5;
+}
+
+.logo-container {
+  width: 2.5rem;
+}
+
+.main {
+  text-align: center;
+
+  &__sub-title {
+    margin-top: 3rem;
+    font-size: 1rem;
+    font-family: variables.$font-primary;
+    font-weight: 400;
+    letter-spacing: 2.7px;
+    line-height: 19px;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+  }
+  &__title {
+    font-size: 5rem;
+    font-family: variables.$font-secondary;
+    color: variables.$color-white;
+    font-weight: 400;
+    text-transform: uppercase;
+    line-height: 100px;
+    margin-bottom: 1rem;
+  }
+  &__description {
+    line-height: 25px;
+    margin-bottom: 5.0625rem;
+  }
+}
+.explore-btn {
+  display: grid;
+  place-content: center;
+  width: 150px;
+  height: 150px;
+  background-color: variables.$color-white;
+  border-radius: 50%;
+  margin: 0 auto;
+  margin-bottom: 1.5rem;
+  & span {
+    font-family: variables.$font-secondary;
+    color: variables.$color-black;
+    text-transform: uppercase;
+    font-size: 1.25rem;
+    line-height: 23px;
+    letter-spacing: 1.25px;
+  }
+}

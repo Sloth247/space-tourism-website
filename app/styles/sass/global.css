@@ -1,0 +1,402 @@
+html {
+  font-size: 100%;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+*:focus {
+  outline: dotted 5px #ffd60a;
+  outline-offset: 1px;
+}
+
+body {
+  font-family: "Barlow", sans-serif;
+  font-weight: 400;
+  font-size: 0.9375rem;
+  color: #d0d6f9;
+  max-width: 100%;
+}
+
+img {
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+li {
+  list-style: none;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.inner-container {
+  margin: 0 auto;
+  display: grid;
+  place-content: center;
+  padding: 1.5rem 1.5rem;
+}
+.inner-container.home {
+  background-image: url("/images/home/background-home-mobile.jpg");
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: cover;
+}
+.inner-container.destination {
+  background-image: url("/images/destination/background-destination-mobile.jpg");
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: cover;
+}
+.inner-container.crew {
+  background-image: url("/images/crew/background-crew-mobile.jpg");
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: cover;
+}
+.inner-container.tech {
+  background-image: url("/images/technology/background-technology-mobile.jpg");
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: cover;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.nav__container {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: -15.875rem;
+  width: 15.875rem;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(33px);
+  z-index: 4;
+}
+.nav__container.active {
+  right: 0;
+}
+.nav__menu {
+  margin-top: 7.375rem;
+}
+.nav__menu li:not(:last-child) {
+  margin-bottom: 2rem;
+}
+.nav__menu li {
+  font-family: "Barlow Condensed", sans-serif;
+  text-transform: uppercase;
+  color: #ffffff;
+  line-height: 19px;
+  letter-spacing: 2.7px;
+}
+.nav__menu li span {
+  font-weight: bold;
+  margin-right: 0.6875rem;
+}
+
+.menu-btn {
+  z-index: 5;
+}
+
+.logo-container {
+  width: 2.5rem;
+}
+
+.main {
+  text-align: center;
+}
+.main__sub-title {
+  margin-top: 3rem;
+  font-size: 1rem;
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 400;
+  letter-spacing: 2.7px;
+  line-height: 19px;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+.main__title {
+  font-size: 5rem;
+  font-family: "Bellefair", serif;
+  color: #ffffff;
+  font-weight: 400;
+  text-transform: uppercase;
+  line-height: 100px;
+  margin-bottom: 1rem;
+}
+.main__description {
+  line-height: 25px;
+  margin-bottom: 5.0625rem;
+}
+
+.explore-btn {
+  display: grid;
+  place-content: center;
+  width: 150px;
+  height: 150px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  margin: 0 auto;
+  margin-bottom: 1.5rem;
+}
+.explore-btn span {
+  font-family: "Bellefair", serif;
+  color: #0b0d17;
+  text-transform: uppercase;
+  font-size: 1.25rem;
+  line-height: 23px;
+  letter-spacing: 1.25px;
+}
+
+.destination__title {
+  font-family: "Barlow Condensed", sans-serif;
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 19px;
+  letter-spacing: 2.7px;
+  text-transform: uppercase;
+  margin-top: 1.5rem;
+  margin-bottom: 2rem;
+}
+.destination__title span {
+  opacity: 0.25;
+  font-weight: 700;
+  margin-right: 0.875rem;
+}
+.destination__hero-container {
+  width: 10.625rem;
+  margin: 0 auto;
+  margin-bottom: 1.625rem;
+}
+.destination__button-container {
+  margin-bottom: 1.75rem;
+}
+.destination__planet-btn {
+  color: #d0d6f9;
+  font-family: "Barlow Condensed", sans-serif;
+  text-transform: uppercase;
+  font-size: 0.875rem;
+  line-height: 16.8px;
+  letter-spacing: 2.36px;
+  position: relative;
+}
+.destination__planet-btn:not(:last-child) {
+  margin-right: 1.75rem;
+}
+.destination__planet-btn.active::after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: #ffffff;
+}
+.destination__planet-btn:hover, .destination__planet-btn:active {
+  color: #ffffff;
+}
+.destination__planet-name {
+  font-family: "Bellefair", serif;
+  font-size: 3.5rem;
+  color: #ffffff;
+  text-transform: uppercase;
+  font-weight: 400;
+  line-height: 64px;
+}
+.destination__description {
+  line-height: 25px;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid #383b4b;
+}
+.destination__distance-container, .destination__time-container {
+  text-transform: uppercase;
+  margin-top: 2rem;
+}
+.destination__distance-container h3, .destination__time-container h3 {
+  font-size: 0.875rem;
+  font-family: "Barlow Condensed", sans-serif;
+  line-height: 17px;
+  font-weight: 400;
+  letter-spacing: 2.3625px;
+  color: #d0d6f9;
+  margin-bottom: 0.75rem;
+}
+.destination__distance-container p, .destination__time-container p {
+  font-size: 1.75rem;
+  font-family: "Bellefair", serif;
+  line-height: 32px;
+  color: #ffffff;
+}
+.destination__time-container {
+  margin-bottom: 2.1875rem;
+}
+
+.crew__title {
+  font-family: "Barlow Condensed", sans-serif;
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 19px;
+  letter-spacing: 2.7px;
+  text-transform: uppercase;
+  margin-top: 1.5rem;
+  margin-bottom: 2rem;
+}
+.crew__title span {
+  opacity: 0.25;
+  font-weight: 700;
+  margin-right: 0.875rem;
+}
+.crew__hero-container {
+  width: 54.16%;
+  margin: 0 auto;
+}
+.crew__btn-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 2rem;
+  border-top: 1px solid #383b4b;
+  padding-bottom: 2rem;
+}
+.crew__btn {
+  width: 10px;
+  height: 10px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  opacity: 0.17;
+}
+.crew__btn.active {
+  opacity: 1;
+}
+.crew__btn:not(:last-child) {
+  margin-right: 1rem;
+}
+.crew__role {
+  font-family: "Bellefair", serif;
+  font-size: 1rem;
+  font-weight: 400;
+  color: #ffffff;
+  opacity: 0.5;
+  text-transform: uppercase;
+  line-height: 18px;
+  margin-bottom: 0.5rem;
+}
+.crew__name {
+  font-family: "Bellefair", serif;
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #ffffff;
+  text-transform: uppercase;
+  line-height: 1.75rem;
+  margin-bottom: 1rem;
+}
+.crew__bio {
+  line-height: 25px;
+  font-weight: 400;
+  margin-bottom: 5rem;
+}
+
+.technology__title {
+  font-family: "Barlow Condensed", sans-serif;
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 19px;
+  letter-spacing: 2.7px;
+  text-transform: uppercase;
+  margin-top: 1.5rem;
+  margin-bottom: 2rem;
+}
+.technology__title span {
+  opacity: 0.25;
+  font-weight: 700;
+  margin-right: 0.875rem;
+}
+.technology__hero-container {
+  margin-left: -1.6rem;
+  margin-right: -1.6rem;
+  margin-bottom: 2rem;
+}
+.technology__btn-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+.technology__btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  color: #ffffff;
+  border: 1px solid #ffffff;
+  font-family: "Bellefair", serif;
+  line-height: 18px;
+  border-radius: 50%;
+  width: 2.5rem;
+  height: 2.5rem;
+}
+.technology__btn:not(:last-child) {
+  margin-right: 1rem;
+}
+.technology__btn.active {
+  background-color: #ffffff;
+  color: #0b0d17;
+}
+.technology__sub-title {
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 400;
+  color: #d0d6f9;
+  text-transform: uppercase;
+  line-height: 17px;
+  letter-spacing: 2.3625px;
+  margin-bottom: 0.5rem;
+}
+.technology__name {
+  font-family: "Bellefair", serif;
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #ffffff;
+  text-transform: uppercase;
+  line-height: 1.75rem;
+  margin-bottom: 1rem;
+}
+.technology__description {
+  line-height: 25px;
+  font-weight: 400;
+  margin-bottom: 3.5625rem;
+}
+
+/*# sourceMappingURL=global.css.map */
