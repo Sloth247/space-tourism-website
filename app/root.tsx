@@ -40,6 +40,7 @@ export const links: LinksFunction = () => [
     href: 'https://fonts.googleapis.com',
   },
   {
+    as: 'style',
     rel: 'stylesheet',
     href: 'https://fonts.googleapis.com/css2?family=Barlow&family=Barlow+Condensed&family=Bellefair&display=swap',
   },
@@ -88,7 +89,7 @@ function Layout({ children }: { children: React.ReactNode }) {
       }
     >
       <header className="header">
-        <Navbar />
+        <Navbar pageName={pathName} />
       </header>
       <main className="main">{children}</main>
     </div>

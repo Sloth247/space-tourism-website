@@ -56,17 +56,48 @@ button {
 }
 
 .inner-container {
-  background-image: url("/images/home/background-home-mobile.jpg");
-  background-repeat: no-repeat;
-  background-position: top center;
-  background-size: cover;
   margin: 0 auto;
   display: grid;
   place-content: center;
   padding: 1.5rem 1.5rem;
 }
+@media screen and (min-width: 34em) {
+  .inner-container {
+    padding: 0;
+    display: block;
+    padding-bottom: 5.625rem;
+  }
+}
 .inner-container.home {
   background-image: url("/images/home/background-home-mobile.jpg");
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: cover;
+}
+@media screen and (min-width: 34em) {
+  .inner-container.home {
+    background-image: url("/images/home/background-home-tablet.jpg");
+  }
+}
+@media screen and (min-width: 54em) {
+  .inner-container.home {
+    background-image: url("/images/home/background-home-desktop.jpg");
+  }
+}
+.inner-container.destination {
+  background-image: url("/images/destination/background-destination-mobile.jpg");
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: cover;
+}
+.inner-container.crew {
+  background-image: url("/images/crew/background-crew-mobile.jpg");
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: cover;
+}
+.inner-container.tech {
+  background-image: url("/images/technology/background-technology-mobile.jpg");
   background-repeat: no-repeat;
   background-position: top center;
   background-size: cover;
@@ -76,6 +107,11 @@ button {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+@media screen and (min-width: 34em) {
+  .nav {
+    padding-left: 2.4375rem;
+  }
 }
 .nav__container {
   position: fixed;
@@ -89,14 +125,26 @@ button {
           backdrop-filter: blur(33px);
   z-index: 4;
 }
+@media screen and (min-width: 34em) {
+  .nav__container {
+    position: relative;
+    right: 0;
+    width: auto;
+    padding: 2.5rem 3rem;
+  }
+}
 .nav__container.active {
   right: 0;
 }
 .nav__menu {
   margin-top: 7.375rem;
 }
-.nav__menu li:not(:last-child) {
-  margin-bottom: 2rem;
+@media screen and (min-width: 34em) {
+  .nav__menu {
+    display: flex;
+    align-items: center;
+    margin-top: 0;
+  }
 }
 .nav__menu li {
   font-family: "Barlow Condensed", sans-serif;
@@ -105,13 +153,44 @@ button {
   line-height: 19px;
   letter-spacing: 2.7px;
 }
+@media screen and (min-width: 34em) {
+  .nav__menu li {
+    font-size: 0.875rem;
+    line-height: 17px;
+    letter-spacing: 2.3625px;
+  }
+}
+.nav__menu li:not(:last-child) {
+  margin-bottom: 2rem;
+}
+@media screen and (min-width: 34em) {
+  .nav__menu li:not(:last-child) {
+    margin-bottom: 0;
+  }
+}
+.nav__menu li:first-child, .nav__menu li:nth-child(3) {
+  margin-right: 2.3125rem;
+}
+.nav__menu li:nth-child(2) {
+  margin-right: 2.625rem;
+}
 .nav__menu li span {
   font-weight: bold;
   margin-right: 0.6875rem;
 }
+@media screen and (min-width: 34em) {
+  .nav__menu li span {
+    display: none;
+  }
+}
 
 .menu-btn {
   z-index: 5;
+}
+@media screen and (min-width: 34em) {
+  .menu-btn {
+    display: none;
+  }
 }
 
 .logo-container {
@@ -120,6 +199,12 @@ button {
 
 .main {
   text-align: center;
+}
+@media screen and (min-width: 34em) {
+  .main__text-container {
+    max-width: 28.125rem;
+    margin: 0 auto;
+  }
 }
 .main__sub-title {
   margin-top: 3rem;
@@ -131,6 +216,15 @@ button {
   text-transform: uppercase;
   margin-bottom: 1rem;
 }
+@media screen and (min-width: 34em) {
+  .main__sub-title {
+    margin-top: 6.625rem;
+    font-size: 1.25rem;
+    line-height: 24px;
+    letter-spacing: 3.375px;
+    margin-bottom: 1.5rem;
+  }
+}
 .main__title {
   font-size: 5rem;
   font-family: "Bellefair", serif;
@@ -140,9 +234,22 @@ button {
   line-height: 100px;
   margin-bottom: 1rem;
 }
+@media screen and (min-width: 34em) {
+  .main__title {
+    font-size: 9.375rem;
+    line-height: 9.375rem;
+    margin-bottom: 1.5rem;
+  }
+}
 .main__description {
   line-height: 25px;
   margin-bottom: 5.0625rem;
+}
+@media screen and (min-width: 34em) {
+  .main__description {
+    margin-bottom: 9.75rem;
+    font-size: 1rem;
+  }
 }
 
 .explore-btn {
@@ -155,6 +262,12 @@ button {
   margin: 0 auto;
   margin-bottom: 1.5rem;
 }
+@media screen and (min-width: 34em) {
+  .explore-btn {
+    width: 242px;
+    height: 242px;
+  }
+}
 .explore-btn span {
   font-family: "Bellefair", serif;
   color: #0b0d17;
@@ -162,6 +275,13 @@ button {
   font-size: 1.25rem;
   line-height: 23px;
   letter-spacing: 1.25px;
+}
+@media screen and (min-width: 34em) {
+  .explore-btn span {
+    font-size: 2rem;
+    line-height: 37px;
+    letter-spacing: 2px;
+  }
 }
 
 .destination__title {
@@ -265,8 +385,13 @@ button {
   margin-right: 0.875rem;
 }
 .crew__hero-container {
-  width: 54.16%;
-  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+.crew__hero-container img {
+  width: auto;
+  max-height: 13.9735rem;
 }
 .crew__btn-container {
   display: flex;
@@ -312,6 +437,78 @@ button {
   line-height: 25px;
   font-weight: 400;
   margin-bottom: 5rem;
+}
+
+.technology__title {
+  font-family: "Barlow Condensed", sans-serif;
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 19px;
+  letter-spacing: 2.7px;
+  text-transform: uppercase;
+  margin-top: 1.5rem;
+  margin-bottom: 2rem;
+}
+.technology__title span {
+  opacity: 0.25;
+  font-weight: 700;
+  margin-right: 0.875rem;
+}
+.technology__hero-container {
+  margin-left: -1.6rem;
+  margin-right: -1.6rem;
+  margin-bottom: 2rem;
+}
+.technology__btn-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+.technology__btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  color: #ffffff;
+  border: 1px solid #ffffff;
+  font-family: "Bellefair", serif;
+  line-height: 18px;
+  border-radius: 50%;
+  width: 2.5rem;
+  height: 2.5rem;
+}
+.technology__btn:not(:last-child) {
+  margin-right: 1rem;
+}
+.technology__btn.active {
+  background-color: #ffffff;
+  color: #0b0d17;
+}
+.technology__sub-title {
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 400;
+  color: #d0d6f9;
+  text-transform: uppercase;
+  line-height: 17px;
+  letter-spacing: 2.3625px;
+  margin-bottom: 0.5rem;
+}
+.technology__name {
+  font-family: "Bellefair", serif;
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #ffffff;
+  text-transform: uppercase;
+  line-height: 1.75rem;
+  margin-bottom: 1rem;
+}
+.technology__description {
+  line-height: 25px;
+  font-weight: 400;
+  margin-bottom: 3.5625rem;
 }
 
 /*# sourceMappingURL=global.css.map */

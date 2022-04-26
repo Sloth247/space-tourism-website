@@ -1,15 +1,38 @@
 import Logo from './logo';
 import MenuBtn from './hamburger';
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Link } from '@remix-run/react';
 
-export default function navbar() {
+export default function navbar({ pageName }) {
+  const ref = useRef<HTMLDivElement>(null);
   const [clicked, setClicked] = useState(false);
   const [expanded, setExpanded] = useState(false);
   const handleClick = () => {
     setClicked(!clicked);
     setExpanded(!expanded);
   };
+
+  useEffect(() => {
+    const checkIfClickedOutside = (e: any) => {
+      if (clicked && ref.current && !ref.current.contains(e.target))
+        setClicked(false);
+      setExpanded(false);
+    };
+    const closeMenu = (e: { keyCode: number }) => {
+      if (e.keyCode === 27) {
+        setClicked(false);
+        setExpanded(false);
+      }
+    };
+    window.addEventListener('mousedown', checkIfClickedOutside);
+    window.addEventListener('keydown', closeMenu);
+
+    return () => {
+      window.removeEventListener('mousedown', checkIfClickedOutside);
+      window.removeEventListener('keydown', closeMenu);
+    };
+  }, [clicked]);
+
   return (
     <nav className="nav">
       <Logo />
@@ -21,24 +44,25 @@ export default function navbar() {
       <div
         className={!clicked ? 'nav__container' : 'nav__container active'}
         id="menu-container"
+        ref={ref}
       >
         <ul className="nav__menu">
-          <li>
+          <li className={pageName === '/' ? 'active' : ''}>
             <Link to="/">
               <span>00</span> Home
             </Link>
           </li>
-          <li>
+          <li className={pageName === '/destination' ? 'active' : ''}>
             <Link to="/destination">
               <span>01</span> Destination
             </Link>
           </li>
-          <li>
+          <li className={pageName === '/crew' ? 'active' : ''}>
             <Link to="/crew">
               <span>02</span> Crew
             </Link>
           </li>
-          <li>
+          <li className={pageName === '/technology' ? 'active' : ''}>
             <Link to="/technology">
               <span>03</span> Technology
             </Link>
@@ -47,4 +71,7 @@ export default function navbar() {
       </div>
     </nav>
   );
+}
+function data(data: any) {
+  throw new Error('Function not implemented.');
 }

@@ -1,55 +1,35 @@
 @use '../abstracts/mixins';
 @use '../abstracts/variables';
 
-.nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  &__container {
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    right: -15.875rem;
-    width: 15.875rem;
-    padding: 2rem;
-    background: rgba(255, 255, 255, 0.04);
-    backdrop-filter: blur(33px);
-    z-index: 4;
-    &.active {
-      right: 0;
-    }
-  }
-  &__menu {
-    margin-top: 7.375rem;
-
-    & li:not(:last-child) {
-      margin-bottom: 2rem;
-    }
-    & li {
-      font-family: variables.$font-primary;
-      text-transform: uppercase;
-      color: variables.$color-white;
-      line-height: 19px;
-      letter-spacing: 2.7px;
-
-      & span {
-        font-weight: bold;
-        margin-right: 0.6875rem;
-      }
-    }
-  }
-}
-
-.menu-btn {
-  z-index: 5;
-}
-
-.logo-container {
-  width: 2.5rem;
-}
-
 .main {
-  text-align: center;
+  &__inner {
+    padding-bottom: 5.625rem;
+    padding: 0 10.3125rem;
+    padding-bottom: 8.1875rem;
+  }
+  &__container {
+    max-width: 1110px;
+    margin: 0 auto;
+    @include mixins.mq(large) {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: 1fr;
+      align-items: end;
+    }
+  }
+  &__text-container {
+    text-align: center;
+    @include mixins.mq(small) {
+      max-width: 28.125rem;
+      margin: 0 auto;
+    }
+    @include mixins.mq(large) {
+      text-align: left;
+      margin: 0;
+      grid-column: 1/2;
+      justify-self: start;
+    }
+  }
 
   &__sub-title {
     margin-top: 3rem;
@@ -60,6 +40,19 @@
     line-height: 19px;
     text-transform: uppercase;
     margin-bottom: 1rem;
+    @include mixins.mq(small) {
+      margin-top: 6.625rem;
+      font-size: 1.25rem;
+      line-height: 24px;
+      letter-spacing: 3.375px;
+      margin-bottom: 1.5rem;
+    }
+    @include mixins.mq(large) {
+      font-size: 1.75rem;
+      line-height: 34px;
+      letter-spacing: 4.725px;
+      margin-top: 15.6875rem;
+    }
   }
   &__title {
     font-size: 5rem;
@@ -69,10 +62,27 @@
     text-transform: uppercase;
     line-height: 100px;
     margin-bottom: 1rem;
+    @include mixins.mq(small) {
+      font-size: 9.375rem;
+      line-height: 9.375rem;
+      margin-bottom: 1.5rem;
+    }
+    @include mixins.mq(large) {
+      line-height: 172px;
+    }
   }
   &__description {
     line-height: 25px;
     margin-bottom: 5.0625rem;
+    @include mixins.mq(small) {
+      margin-bottom: 9.75rem;
+      font-size: 1rem;
+    }
+    @include mixins.mq(large) {
+      font-size: 1.125rem;
+      line-height: 32px;
+      margin-bottom: 0;
+    }
   }
 }
 .explore-btn {
@@ -83,7 +93,47 @@
   background-color: variables.$color-white;
   border-radius: 50%;
   margin: 0 auto;
-  margin-bottom: 1.5rem;
+  // margin-bottom: 1.5rem;
+  position: relative;
+  z-index: 2;
+  @include mixins.mq(small) {
+    width: 242px;
+    height: 242px;
+  }
+  @include mixins.mq(large) {
+    width: 274px;
+    height: 274px;
+    margin: 0;
+    grid-column: 2/-1;
+    justify-self: end;
+  }
+
+  &:hover::before,
+  &:focus::before {
+    content: '';
+    position: absolute;
+    width: 246px;
+    height: 246px;
+    background-color: #979797;
+    border-radius: 50%;
+    opacity: 0.1;
+    mix-blend-mode: normal;
+    z-index: 1;
+    top: -3rem;
+    left: -3rem;
+    @include mixins.mq(small) {
+      width: 396px;
+      height: 396px;
+      top: -4.8125rem;
+      left: -4.8125rem;
+    }
+    @include mixins.mq(large) {
+      width: 450px;
+      height: 450px;
+      top: -5.5rem;
+      left: -5.5rem;
+    }
+  }
   & span {
     font-family: variables.$font-secondary;
     color: variables.$color-black;
@@ -91,5 +141,10 @@
     font-size: 1.25rem;
     line-height: 23px;
     letter-spacing: 1.25px;
+    @include mixins.mq(small) {
+      font-size: 2rem;
+      line-height: 37px;
+      letter-spacing: 2px;
+    }
   }
 }

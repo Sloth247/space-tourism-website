@@ -12,16 +12,83 @@
     text-transform: uppercase;
     margin-top: 1.5rem;
     margin-bottom: 2rem;
+    @include mixins.mq(small) {
+      padding-left: 2.4375rem;
+      font-size: 1.25rem;
+      line-height: 1.5rem;
+      letter-spacing: 3.375px;
+      margin-top: 2.5rem;
+      margin-bottom: 3.75rem;
+    }
+    @include mixins.mq(large) {
+      padding-left: 10.40625rem;
+      font-size: 1.75rem;
+      line-height: 24px;
+      letter-spacing: 4.725px;
+      margin-bottom: 0;
+    }
     & span {
       opacity: 0.25;
       font-weight: 700;
       margin-right: 0.875rem;
     }
   }
-  &__hero-container {
-    width: 54.16%;
+  &__inner-container {
+    max-width: 1440px;
     margin: 0 auto;
+    @include mixins.mq(small) {
+      display: grid;
+      grid-template-rows: repeat(2, minmax(min-content, max-content));
+    }
+    @include mixins.mq(large) {
+      display: grid;
+      align-items: flex-end;
+      grid-template-rows: 1fr;
+    }
   }
+  &__hero-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    @include mixins.mq(small) {
+      grid-row: 2/-1;
+    }
+
+    @include mixins.mq(large) {
+      grid-row: 1/-1;
+      margin-right: 5.59rem;
+    }
+    & img {
+      width: auto;
+      max-height: 13.9735rem;
+      @include mixins.mq(small) {
+        max-height: 33.25rem;
+      }
+      @include mixins.mq(large) {
+        max-height: none;
+      }
+    }
+  }
+
+  &__text-container {
+    @include mixins.mq(small) {
+      grid-row: 1/2;
+      display: grid;
+      grid-template-rows: repeat(2, minmax(min-content, max-content));
+      padding: 0 9.6875rem;
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+    @include mixins.mq(large) {
+      grid-column: 1/2;
+      text-align: left;
+      padding: 0;
+      padding-left: 10.40625rem;
+      padding-top: 9.625rem;
+      margin-bottom: 0;
+    }
+  }
+
   &__btn-container {
     display: flex;
     justify-content: center;
@@ -29,6 +96,16 @@
     padding-top: 2rem;
     border-top: 1px solid #383b4b;
     padding-bottom: 2rem;
+    @include mixins.mq(small) {
+      grid-row: 2/-1;
+      border-top: none;
+      padding-top: 0;
+    }
+    @include mixins.mq(large) {
+      justify-content: flex-start;
+      margin-bottom: 5.875rem;
+      padding-bottom: 0;
+    }
   }
   &__btn {
     width: 10px;
@@ -36,11 +113,27 @@
     background-color: variables.$color-white;
     border-radius: 50%;
     opacity: 0.17;
+    @include mixins.mq(large) {
+      width: 15px;
+      height: 15px;
+    }
     &.active {
       opacity: 1;
     }
+    &:hover,
+    &:focus {
+      opacity: 0.5;
+    }
     &:not(:last-child) {
       margin-right: 1rem;
+      @include mixins.mq(large) {
+        margin-right: 1.5rem;
+      }
+    }
+  }
+  &__content {
+    @include mixins.mq(small) {
+      grid-row: 1/2;
     }
   }
   &__role {
@@ -52,6 +145,15 @@
     text-transform: uppercase;
     line-height: 18px;
     margin-bottom: 0.5rem;
+    @include mixins.mq(small) {
+      font-size: 1.5rem;
+      line-height: 28px;
+    }
+    @include mixins.mq(large) {
+      font-size: 2rem;
+      line-height: 37px;
+      margin-bottom: 0.9375rem;
+    }
   }
   &__name {
     font-family: variables.$font-secondary;
@@ -61,10 +163,30 @@
     text-transform: uppercase;
     line-height: 1.75rem;
     margin-bottom: 1rem;
+    @include mixins.mq(small) {
+      font-size: 2.5rem;
+      line-height: 46px;
+    }
+    @include mixins.mq(large) {
+      font-size: 3.5rem;
+      line-height: 64px;
+      margin-bottom: 1.6875rem;
+    }
   }
   &__bio {
     line-height: 25px;
     font-weight: 400;
     margin-bottom: 5rem;
+    @include mixins.mq(small) {
+      font-size: 1rem;
+      line-height: 28px;
+      margin-bottom: 2.5rem;
+    }
+    @include mixins.mq(large) {
+      max-width: 27.75rem;
+      font-size: 1.125rem;
+      line-height: 32px;
+      margin-bottom: 7.5rem;
+    }
   }
 }

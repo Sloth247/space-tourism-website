@@ -2,6 +2,18 @@
 @use '../abstracts/variables';
 
 .technology {
+  &__container {
+    max-width: 1440px;
+    margin: 0 auto;
+    @include mixins.mq(large) {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(min-content, max-content));
+      grid-template-rows: 1fr;
+      align-items: center;
+      padding-left: 10.40625rem;
+      margin-top: 3.75rem;
+    }
+  }
   &__title {
     font-family: variables.$font-primary;
     color: variables.$color-white;
@@ -12,6 +24,21 @@
     text-transform: uppercase;
     margin-top: 1.5rem;
     margin-bottom: 2rem;
+    @include mixins.mq(small) {
+      padding-left: 2.4375rem;
+      font-size: 1.25rem;
+      line-height: 1.5rem;
+      letter-spacing: 3.375px;
+      margin-top: 2.5rem;
+      margin-bottom: 3.75rem;
+    }
+    @include mixins.mq(large) {
+      padding-left: 10.40625rem;
+      font-size: 1.75rem;
+      line-height: 24px;
+      letter-spacing: 4.725px;
+      margin-bottom: 0;
+    }
     & span {
       opacity: 0.25;
       font-weight: 700;
@@ -22,12 +49,31 @@
     margin-left: -1.6rem;
     margin-right: -1.6rem;
     margin-bottom: 2rem;
+    @include mixins.mq(small) {
+      margin: 0;
+      margin-bottom: 3.5rem;
+    }
+    @include mixins.mq(large) {
+      grid-column: 3/-1;
+      grid-row: 1/-1;
+    }
+    & img {
+      width: auto;
+    }
   }
   &__btn-container {
     display: flex;
     justify-content: center;
     align-items: center;
     margin-bottom: 2rem;
+    @include mixins.mq(small) {
+      margin-bottom: 2.75rem;
+    }
+    @include mixins.mq(large) {
+      grid-column: 1/2;
+      grid-row: 1/-1;
+      flex-direction: column;
+    }
   }
   &__btn {
     display: flex;
@@ -35,18 +81,48 @@
     align-items: center;
     background-color: transparent;
     color: variables.$color-white;
-    border: 1px solid variables.$color-white;
+    border: 1px solid rgba(255, 255, 255, 0.25);
     font-family: variables.$font-secondary;
     line-height: 18px;
     border-radius: 50%;
     width: 2.5rem;
     height: 2.5rem;
+    @include mixins.mq(small) {
+      width: 3.75rem;
+      height: 3.75rem;
+      font-size: 1.5rem;
+      line-height: 28px;
+      letter-spacing: 1.5px;
+    }
     &:not(:last-child) {
       margin-right: 1rem;
+      @include mixins.mq(large) {
+        margin-right: 0;
+        margin-bottom: 2rem;
+      }
     }
     &.active {
       background-color: variables.$color-white;
       color: variables.$color-black;
+    }
+    &:hover,
+    &:focus {
+      border-color: variables.$color-white;
+    }
+  }
+  &__text-container {
+    @include mixins.mq(small) {
+      text-align: center;
+      padding: 0 9.6875rem;
+      padding-bottom: 6.0625rem;
+    }
+    @include mixins.mq(large) {
+      grid-column: 2/3;
+      grid-row: 1/-1;
+      padding: 0;
+      margin-left: 5rem;
+      margin-right: 8.125rem;
+      text-align: left;
     }
   }
   &__sub-title {
@@ -58,6 +134,12 @@
     line-height: 17px;
     letter-spacing: 2.3625px;
     margin-bottom: 0.5rem;
+    @include mixins.mq(small) {
+      font-size: 1rem;
+    }
+    @include mixins.mq(large) {
+      margin-bottom: 0.6875rem;
+    }
   }
   &__name {
     font-family: variables.$font-secondary;
@@ -67,10 +149,28 @@
     text-transform: uppercase;
     line-height: 1.75rem;
     margin-bottom: 1rem;
+    @include mixins.mq(small) {
+      font-size: 2.5rem;
+      line-height: 46px;
+    }
+    @include mixins.mq(large) {
+      font-size: 3.5rem;
+      line-height: 64px;
+      margin-bottom: 1.0625rem;
+    }
   }
   &__description {
     line-height: 25px;
     font-weight: 400;
     margin-bottom: 3.5625rem;
+    @include mixins.mq(small) {
+      font-size: 1rem;
+      line-height: 28px;
+      margin-bottom: 0;
+    }
+    @include mixins.mq(large) {
+      font-size: 1.125rem;
+      line-height: 32px;
+    }
   }
 }

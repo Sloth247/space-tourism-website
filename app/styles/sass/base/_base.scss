@@ -22,6 +22,7 @@ body {
   font-weight: 400;
   font-size: 0.9375rem;
   color: variables.$color-light-purple;
+
   max-width: 100%;
 }
 
@@ -60,28 +61,61 @@ button {
   display: grid;
   place-content: center;
   padding: 1.5rem 1.5rem;
+  min-height: 100vh;
+  @include mixins.mq(small) {
+    padding: 0;
+    display: block;
+    // padding-bottom: 5.625rem;
+  }
+  @include mixins.mq(medium) {
+    padding-top: 2.5rem;
+  }
   &.home {
     background-image: url('/images/home/background-home-mobile.jpg');
     background-repeat: no-repeat;
     background-position: top center;
     background-size: cover;
+    @include mixins.mq(small) {
+      background-image: url('/images/home/background-home-tablet.jpg');
+    }
+    @include mixins.mq(medium) {
+      background-image: url('/images/home/background-home-desktop.jpg');
+    }
   }
   &.destination {
     background-image: url('/images/destination/background-destination-mobile.jpg');
     background-repeat: no-repeat;
     background-position: top center;
     background-size: cover;
+    @include mixins.mq(small) {
+      background-image: url('/images/destination/background-destination-tablet.jpg');
+    }
+    @include mixins.mq(medium) {
+      background-image: url('/images/destination/background-destination-desktop.jpg');
+    }
   }
   &.crew {
     background-image: url('/images/crew/background-crew-mobile.jpg');
     background-repeat: no-repeat;
     background-position: top center;
     background-size: cover;
+    @include mixins.mq(small) {
+      background-image: url('/images/crew/background-crew-tablet.jpg');
+    }
+    @include mixins.mq(medium) {
+      background-image: url('/images/crew/background-crew-desktop.jpg');
+    }
   }
   &.tech {
     background-image: url('/images/technology/background-technology-mobile.jpg');
     background-repeat: no-repeat;
     background-position: top center;
     background-size: cover;
+    @include mixins.mq(small) {
+      background-image: url('/images/technology/background-technology-tablet.jpg');
+    }
+    @include mixins.mq(medium) {
+      background-image: url('/images/technology/background-technology-desktop.jpg');
+    }
   }
 }
