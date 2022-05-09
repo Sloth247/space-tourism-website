@@ -1,12 +1,7 @@
 import type { MetaFunction, LinksFunction } from '@remix-run/node';
-import {
-  Links,
-  LiveReload,
-  Meta,
-  Outlet,
-  Scripts,
-  useLocation,
-} from '@remix-run/react';
+import { Links, LiveReload, Meta, Outlet, Scripts } from '@remix-run/react';
+
+import { useLocation } from 'react-router-dom';
 
 import globalStylesUrl from './styles/sass/global.css';
 

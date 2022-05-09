@@ -1,9 +1,7 @@
-import { Link } from '@remix-run/react';
-import { AnimatePresence, motion } from 'framer-motion';
-import { useLocation } from '@remix-run/react';
+import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
 
 export default function Home() {
-  const location = useLocation();
   return (
     <div className="main__inner">
       <div className="main__container">

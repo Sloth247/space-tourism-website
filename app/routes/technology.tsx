@@ -1,5 +1,6 @@
 import { json, LoaderFunction } from '@remix-run/node';
-import { Link, useSearchParams } from '@remix-run/react';
+import { useSearchParams } from '@remix-run/react';
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
 import data from '~/components/data/data.json';
