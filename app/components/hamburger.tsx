@@ -4,11 +4,9 @@ import Cross from '../../public/images/shared/icon-close.svg';
 export default function hamburger({
   handleClick,
   expanded,
-  clicked,
 }: {
   handleClick: React.MouseEventHandler<HTMLButtonElement>;
   expanded: boolean;
-  clicked: boolean;
 }) {
   return (
     <button
@@ -18,7 +16,7 @@ export default function hamburger({
       onClick={handleClick}
       aria-controls="menu-container"
     >
-      {!clicked ? (
+      {!expanded ? (
         <img src={Hamburger} alt="open menu" />
       ) : (
         <img src={Cross} alt="close menu" />

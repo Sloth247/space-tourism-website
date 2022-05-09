@@ -58,14 +58,13 @@ button {
 
 .inner-container {
   margin: 0 auto;
-  display: grid;
-  place-content: center;
+  // display: grid;
+  // place-content: center;
   padding: 1.5rem 1.5rem;
   min-height: 100vh;
   @include mixins.mq(small) {
     padding: 0;
     display: block;
-    // padding-bottom: 5.625rem;
   }
   @include mixins.mq(medium) {
     padding-top: 2.5rem;
@@ -78,7 +77,7 @@ button {
     @include mixins.mq(small) {
       background-image: url('/images/home/background-home-tablet.jpg');
     }
-    @include mixins.mq(medium) {
+    @include mixins.mq(desktop) {
       background-image: url('/images/home/background-home-desktop.jpg');
     }
   }
@@ -90,7 +89,7 @@ button {
     @include mixins.mq(small) {
       background-image: url('/images/destination/background-destination-tablet.jpg');
     }
-    @include mixins.mq(medium) {
+    @include mixins.mq(desktop) {
       background-image: url('/images/destination/background-destination-desktop.jpg');
     }
   }
@@ -102,7 +101,7 @@ button {
     @include mixins.mq(small) {
       background-image: url('/images/crew/background-crew-tablet.jpg');
     }
-    @include mixins.mq(medium) {
+    @include mixins.mq(desktop) {
       background-image: url('/images/crew/background-crew-desktop.jpg');
     }
   }
@@ -114,7 +113,7 @@ button {
     @include mixins.mq(small) {
       background-image: url('/images/technology/background-technology-tablet.jpg');
     }
-    @include mixins.mq(medium) {
+    @include mixins.mq(desktop) {
       background-image: url('/images/technology/background-technology-desktop.jpg');
     }
   }

@@ -4,6 +4,21 @@ import { json, LoaderFunction } from '@remix-run/node';
 // import { useState } from 'react';
 import { Link, useSearchParams } from '@remix-run/react';
 
+import { motion } from 'framer-motion';
+
+const downAnimation = {
+  key: 'down',
+  initial: { opacity: 0, y: '-200%' },
+  animate: { opacity: 1, y: 0 },
+  transition: { duration: 1.5, ease: 'easeInOut' },
+};
+const upAnimation = {
+  key: 'up',
+  initial: { opacity: 0, y: '50%' },
+  animate: { opacity: 1, y: 0 },
+  transition: { duration: 1.5, ease: 'easeInOut' },
+};
+
 export const loader: LoaderFunction = async () => {
   console.log(data);
   return json(data);
@@ -20,22 +35,18 @@ export default function crew() {
 
   return (
     <>
-      <h1 className="crew__title">
+      <motion.h1 className="crew__title" {...downAnimation}>
         <span>02</span>Meet your crew
-      </h1>
+      </motion.h1>
 
       <div className="crew__inner-container">
-        <div className="crew__hero-container">
-          <img
-            src={data.crew[pathId].images.png}
-            alt=""
-            aria-hidden="true"
-            className="crew__hero-img"
-          />
-        </div>
-
         <div className="crew__text-container">
-          <div className="crew__btn-container">
+          <motion.div
+            className="crew__btn-container"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1.5, type: 'linear' }}
+          >
             {data &&
               data.crew.map((crew) => (
                 <Link
@@ -49,14 +60,34 @@ export default function crew() {
                   <span className="sr-only">{crew.id}</span>
                 </Link>
               ))}
-          </div>
+          </motion.div>
 
           <div className="crew__content">
-            <h3 className="crew__role">{data.crew[pathId].role}</h3>
-            <h2 className="crew__name">{data.crew[pathId].name}</h2>
-            <p className="crew__bio">{data.crew[pathId].bio}</p>
+            <motion.h3
+              className="crew__role"
+              key="down"
+              initial={{ opacity: 0, y: '-200%' }}
+              animate={{ opacity: 0.5, y: 0 }}
+              transition={{ duration: 1.5, ease: 'easeInOut' }}
+            >
+              {data.crew[pathId].role}
+            </motion.h3>
+            <motion.h2 className="crew__name" {...upAnimation}>
+              {data.crew[pathId].name}
+            </motion.h2>
+            <motion.p className="crew__bio" {...upAnimation}>
+              {data.crew[pathId].bio}
+            </motion.p>
           </div>
         </div>
+        <motion.div className="crew__hero-container" {...upAnimation}>
+          <img
+            src={data.crew[pathId].images.png}
+            alt=""
+            aria-hidden="true"
+            className="crew__hero-img"
+          />
+        </motion.div>
       </div>
     </>
   );

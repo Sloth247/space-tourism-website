@@ -1,7 +1,21 @@
 import { json, LoaderFunction } from '@remix-run/node';
 import { Link, useSearchParams } from '@remix-run/react';
+import { motion } from 'framer-motion';
 
 import data from '~/components/data/data.json';
+
+const downAnimation = {
+  key: 'down',
+  initial: { opacity: 0, y: '-200%' },
+  animate: { opacity: 1, y: 0 },
+  transition: { duration: 1.5, ease: 'easeInOut' },
+};
+const upAnimation = {
+  key: 'up',
+  initial: { opacity: 0, y: '50%' },
+  animate: { opacity: 1, y: 0 },
+  transition: { duration: 1.5, ease: 'easeInOut' },
+};
 
 export const loader: LoaderFunction = async () => {
   console.log(data);
@@ -19,11 +33,42 @@ export default function technology() {
   // };
   return (
     <>
-      <h1 className="technology__title">
+      <motion.h1 className="technology__title" {...downAnimation}>
         <span>03</span>Space Launch 101
-      </h1>
+      </motion.h1>
       <div className="technology__container">
-        <picture className="technology__hero-container">
+        <div className="technology__left-container">
+          <motion.div className="technology__btn-container" {...upAnimation}>
+            {data &&
+              data.technology.map((tech) => (
+                <Link
+                  to={`?id=${tech.id}`}
+                  className={
+                    pathId === tech.id
+                      ? 'technology__btn active'
+                      : 'technology__btn'
+                  }
+                  aria-current={pathId === tech.id ? 'page' : 'false'}
+                  key={tech.id}
+                  // onClick={() => handleClick(tech.id)}
+                >
+                  <span>{tech.id + 1}</span>
+                </Link>
+              ))}
+          </motion.div>
+          <section className="technology__text-container">
+            <motion.h3 className="technology__sub-title" {...downAnimation}>
+              The Terminology...
+            </motion.h3>
+            <motion.h2 className="technology__name" {...upAnimation}>
+              {data.technology[pathId].name}
+            </motion.h2>
+            <motion.p className="technology__description" {...upAnimation}>
+              {data.technology[pathId].description}
+            </motion.p>
+          </section>
+        </div>
+        <motion.picture className="technology__hero-container" {...upAnimation}>
           <source
             srcSet={data.technology[pathId].images.portrait}
             media="(min-width: 62.5em)"
@@ -34,33 +79,7 @@ export default function technology() {
             aria-hidden="true"
             className="technology__hero-img"
           />
-        </picture>
-
-        <div className="technology__btn-container">
-          {data &&
-            data.technology.map((tech) => (
-              <Link
-                to={`?id=${tech.id}`}
-                className={
-                  pathId === tech.id
-                    ? 'technology__btn active'
-                    : 'technology__btn'
-                }
-                aria-current={pathId === tech.id ? 'page' : 'false'}
-                key={tech.id}
-                // onClick={() => handleClick(tech.id)}
-              >
-                <span>{tech.id + 1}</span>
-              </Link>
-            ))}
-        </div>
-        <section className="technology__text-container">
-          <h3 className="technology__sub-title">The Terminology...</h3>
-          <h2 className="technology__name">{data.technology[pathId].name}</h2>
-          <p className="technology__description">
-            {data.technology[pathId].description}
-          </p>
-        </section>
+        </motion.picture>
       </div>
     </>
   );

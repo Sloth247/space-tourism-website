@@ -5,10 +5,10 @@
   &__container {
     max-width: 1440px;
     margin: 0 auto;
-    @include mixins.mq(large) {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(min-content, max-content));
-      grid-template-rows: 1fr;
+    display: grid;
+    @include mixins.mq(desktop) {
+      display: flex;
+      justify-content: space-between;
       align-items: center;
       padding-left: 10.40625rem;
       margin-top: 3.75rem;
@@ -24,7 +24,9 @@
     text-transform: uppercase;
     margin-top: 1.5rem;
     margin-bottom: 2rem;
+    text-align: center;
     @include mixins.mq(small) {
+      text-align: left;
       padding-left: 2.4375rem;
       font-size: 1.25rem;
       line-height: 1.5rem;
@@ -32,7 +34,7 @@
       margin-top: 2.5rem;
       margin-bottom: 3.75rem;
     }
-    @include mixins.mq(large) {
+    @include mixins.mq(desktop) {
       padding-left: 10.40625rem;
       font-size: 1.75rem;
       line-height: 24px;
@@ -46,30 +48,31 @@
     }
   }
   &__hero-container {
+    grid-row: 1/2;
     margin-left: -1.6rem;
     margin-right: -1.6rem;
-    margin-bottom: 2rem;
+    display: flex;
+    flex: 0 1 515px;
+    height: 100%;
     @include mixins.mq(small) {
       margin: 0;
-      margin-bottom: 3.5rem;
     }
-    @include mixins.mq(large) {
-      grid-column: 3/-1;
-      grid-row: 1/-1;
-    }
+
     & img {
-      width: auto;
+      max-width: 100%;
     }
   }
   &__btn-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 2rem;
+    margin-top: 2.125rem;
+    margin-bottom: 1.625rem;
     @include mixins.mq(small) {
+      margin-top: 3.5rem;
       margin-bottom: 2.75rem;
     }
-    @include mixins.mq(large) {
+    @include mixins.mq(desktop) {
       grid-column: 1/2;
       grid-row: 1/-1;
       flex-direction: column;
@@ -96,7 +99,7 @@
     }
     &:not(:last-child) {
       margin-right: 1rem;
-      @include mixins.mq(large) {
+      @include mixins.mq(desktop) {
         margin-right: 0;
         margin-bottom: 2rem;
       }
@@ -110,19 +113,29 @@
       border-color: variables.$color-white;
     }
   }
-  &__text-container {
-    @include mixins.mq(small) {
-      text-align: center;
-      padding: 0 9.6875rem;
-      padding-bottom: 6.0625rem;
+  &__left-container {
+    @include mixins.mq(desktop) {
+      display: flex;
+      align-items: center;
     }
-    @include mixins.mq(large) {
+  }
+  &__text-container {
+    grid-row: 2/-1;
+    text-align: center;
+    margin-bottom: 3.5625rem;
+    @include mixins.mq(small) {
+      padding: 0 9.6875rem;
+      margin-bottom: 6.0625rem;
+    }
+    @include mixins.mq(desktop) {
       grid-column: 2/3;
       grid-row: 1/-1;
       padding: 0;
+      margin-bottom: 0;
       margin-left: 5rem;
       margin-right: 8.125rem;
       text-align: left;
+      max-width: 29.325rem;
     }
   }
   &__sub-title {
@@ -136,8 +149,9 @@
     margin-bottom: 0.5rem;
     @include mixins.mq(small) {
       font-size: 1rem;
+      margin-bottom: 1rem;
     }
-    @include mixins.mq(large) {
+    @include mixins.mq(desktop) {
       margin-bottom: 0.6875rem;
     }
   }
@@ -153,7 +167,7 @@
       font-size: 2.5rem;
       line-height: 46px;
     }
-    @include mixins.mq(large) {
+    @include mixins.mq(desktop) {
       font-size: 3.5rem;
       line-height: 64px;
       margin-bottom: 1.0625rem;
@@ -162,13 +176,13 @@
   &__description {
     line-height: 25px;
     font-weight: 400;
-    margin-bottom: 3.5625rem;
+
     @include mixins.mq(small) {
       font-size: 1rem;
       line-height: 28px;
       margin-bottom: 0;
     }
-    @include mixins.mq(large) {
+    @include mixins.mq(desktop) {
       font-size: 1.125rem;
       line-height: 32px;
     }

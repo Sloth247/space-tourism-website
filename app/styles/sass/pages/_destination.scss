@@ -20,7 +20,7 @@
       margin-top: 2.5rem;
       margin-bottom: 3.75rem;
     }
-    @include mixins.mq(medium) {
+    @include mixins.mq(desktop) {
       padding-left: 10.40625rem;
       font-size: 1.75rem;
       line-height: 24px;
@@ -31,13 +31,13 @@
       opacity: 0.25;
       font-weight: 700;
       margin-right: 0.875rem;
-      @include mixins.mq(medium) {
+      @include mixins.mq(desktop) {
         margin-right: 1.75rem;
       }
     }
   }
   &__inner {
-    @include mixins.mq(medium) {
+    @include mixins.mq(desktop) {
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -56,17 +56,16 @@
         width: 18.75rem;
         margin-bottom: 3.3125rem;
       }
-      @include mixins.mq(medium) {
-        width: calc(100vw - 166.5px - 163px - 434px);
+      @include mixins.mq(desktop) {
+        width: 100%;
         max-width: 27.8125rem;
         margin-left: 14.375rem;
         margin-top: 6.0625rem;
         margin-bottom: 0;
-        padding-right: 1rem;
       }
       & img {
-        @include mixins.mq(medium) {
-          width: 100%;
+        @include mixins.mq(desktop) {
+          max-width: 100%;
         }
       }
     }
@@ -77,11 +76,11 @@
     @include mixins.mq(small) {
       padding: 0 6.0625rem;
     }
-    @include mixins.mq(medium) {
+    @include mixins.mq(desktop) {
       text-align: left;
       max-width: 27.8125rem;
       padding: 0;
-      margin-left: 2rem;
+      margin-left: 4rem;
       margin-right: 10.1875rem;
       margin-top: 4rem;
     }
@@ -92,7 +91,7 @@
     @include mixins.mq(small) {
       margin-bottom: 2rem;
     }
-    @include mixins.mq(medium) {
+    @include mixins.mq(desktop) {
       margin-bottom: 2.3125rem;
     }
   }
@@ -146,7 +145,7 @@
           @include mixins.mq(small) {
             bottom: -15px;
           }
-          @include mixins.mq(medium) {
+          @include mixins.mq(desktop) {
             bottom: -12px;
           }
         }
@@ -164,7 +163,7 @@
         font-size: 5rem;
         line-height: 92px;
       }
-      @include mixins.mq(medium) {
+      @include mixins.mq(desktop) {
         font-size: 6.25rem;
         line-height: 115px;
         margin-bottom: 0.875rem;
@@ -180,7 +179,7 @@
       line-height: 28px;
       padding-bottom: 3.0625rem;
     }
-    @include mixins.mq(medium) {
+    @include mixins.mq(desktop) {
       font-size: 1.125rem;
       line-height: 32px;
       padding-bottom: 3.375rem;
@@ -196,7 +195,7 @@
       justify-items: center;
       align-items: center;
     }
-    @include mixins.mq(medium) {
+    @include mixins.mq(desktop) {
       justify-items: start;
       align-items: start;
       padding-top: 1.75rem;

@@ -13,6 +13,8 @@ import globalStylesUrl from './styles/sass/global.css';
 import faviconUrl from '../public/favicon-32x32.png';
 import React from 'react';
 
+import { AnimatePresence, motion } from 'framer-motion';
+
 import Navbar from './components/navbar';
 
 export const meta: MetaFunction = () => ({
@@ -91,7 +93,18 @@ function Layout({ children }: { children: React.ReactNode }) {
       <header className="header">
         <Navbar pageName={pathName} />
       </header>
-      <main className="main">{children}</main>
+      <AnimatePresence exitBeforeEnter initial={false}>
+        <motion.main
+          className="main"
+          // initial={{ opacity: 0, y: '50%' }}
+          // animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1.5, ease: 'easeInOut' }}
+          exit={{ transition: { duration: 1.5 }, opacity: 0, y: '100%' }}
+          key={location.key}
+        >
+          {children}
+        </motion.main>
+      </AnimatePresence>
     </div>
   );
 }

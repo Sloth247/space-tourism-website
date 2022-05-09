@@ -57,8 +57,6 @@ button {
 
 .inner-container {
   margin: 0 auto;
-  display: grid;
-  place-content: center;
   padding: 1.5rem 1.5rem;
   min-height: 100vh;
 }
@@ -84,7 +82,7 @@ button {
     background-image: url("/images/home/background-home-tablet.jpg");
   }
 }
-@media screen and (min-width: 80em) {
+@media screen and (min-width: 62.5em) {
   .inner-container.home {
     background-image: url("/images/home/background-home-desktop.jpg");
   }
@@ -100,7 +98,7 @@ button {
     background-image: url("/images/destination/background-destination-tablet.jpg");
   }
 }
-@media screen and (min-width: 80em) {
+@media screen and (min-width: 62.5em) {
   .inner-container.destination {
     background-image: url("/images/destination/background-destination-desktop.jpg");
   }
@@ -116,7 +114,7 @@ button {
     background-image: url("/images/crew/background-crew-tablet.jpg");
   }
 }
-@media screen and (min-width: 80em) {
+@media screen and (min-width: 62.5em) {
   .inner-container.crew {
     background-image: url("/images/crew/background-crew-desktop.jpg");
   }
@@ -132,7 +130,7 @@ button {
     background-image: url("/images/technology/background-technology-tablet.jpg");
   }
 }
-@media screen and (min-width: 80em) {
+@media screen and (min-width: 62.5em) {
   .inner-container.tech {
     background-image: url("/images/technology/background-technology-desktop.jpg");
   }
@@ -317,6 +315,8 @@ button {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: 1fr;
     align-items: end;
+    grid-column-gap: 3rem;
+    column-gap: 5rem;
   }
 }
 .main__text-container {
@@ -382,6 +382,12 @@ button {
 @media screen and (min-width: 62.5em) {
   .main__title {
     line-height: 172px;
+    font-size: 8.5rem;
+  }
+}
+@media screen and (min-width: 80em) {
+  .main__title {
+    font-size: 9.375rem;
   }
 }
 .main__description {
@@ -412,6 +418,7 @@ button {
   margin: 0 auto;
   position: relative;
   z-index: 2;
+  transition: all 0.2s ease-in-out;
 }
 @media screen and (min-width: 34em) {
   .explore-btn {
@@ -494,7 +501,7 @@ button {
     margin-bottom: 3.75rem;
   }
 }
-@media screen and (min-width: 80em) {
+@media screen and (min-width: 62.5em) {
   .destination__title {
     padding-left: 10.40625rem;
     font-size: 1.75rem;
@@ -508,12 +515,12 @@ button {
   font-weight: 700;
   margin-right: 0.875rem;
 }
-@media screen and (min-width: 80em) {
+@media screen and (min-width: 62.5em) {
   .destination__title span {
     margin-right: 1.75rem;
   }
 }
-@media screen and (min-width: 80em) {
+@media screen and (min-width: 62.5em) {
   .destination__inner {
     display: flex;
     justify-content: space-between;
@@ -534,19 +541,18 @@ button {
     margin-bottom: 3.3125rem;
   }
 }
-@media screen and (min-width: 80em) {
+@media screen and (min-width: 62.5em) {
   .destination__hero-container {
-    width: calc(100vw - 166.5px - 163px - 434px);
+    width: 100%;
     max-width: 27.8125rem;
     margin-left: 14.375rem;
     margin-top: 6.0625rem;
     margin-bottom: 0;
-    padding-right: 1rem;
   }
 }
-@media screen and (min-width: 80em) {
+@media screen and (min-width: 62.5em) {
   .destination__hero-container img {
-    width: 100%;
+    max-width: 100%;
   }
 }
 .destination__text-container {
@@ -557,12 +563,12 @@ button {
     padding: 0 6.0625rem;
   }
 }
-@media screen and (min-width: 80em) {
+@media screen and (min-width: 62.5em) {
   .destination__text-container {
     text-align: left;
     max-width: 27.8125rem;
     padding: 0;
-    margin-left: 2rem;
+    margin-left: 4rem;
     margin-right: 10.1875rem;
     margin-top: 4rem;
   }
@@ -575,7 +581,7 @@ button {
     margin-bottom: 2rem;
   }
 }
-@media screen and (min-width: 80em) {
+@media screen and (min-width: 62.5em) {
   .destination__button-container {
     margin-bottom: 2.3125rem;
   }
@@ -637,7 +643,7 @@ button {
     bottom: -15px;
   }
 }
-@media screen and (min-width: 80em) {
+@media screen and (min-width: 62.5em) {
   .destination__planet-btn:hover::after, .destination__planet-btn:focus::after {
     bottom: -12px;
   }
@@ -657,7 +663,7 @@ button {
     line-height: 92px;
   }
 }
-@media screen and (min-width: 80em) {
+@media screen and (min-width: 62.5em) {
   .destination__planet-name {
     font-size: 6.25rem;
     line-height: 115px;
@@ -676,7 +682,7 @@ button {
     padding-bottom: 3.0625rem;
   }
 }
-@media screen and (min-width: 80em) {
+@media screen and (min-width: 62.5em) {
   .destination__description {
     font-size: 1.125rem;
     line-height: 32px;
@@ -694,7 +700,7 @@ button {
     align-items: center;
   }
 }
-@media screen and (min-width: 80em) {
+@media screen and (min-width: 62.5em) {
   .destination__stats-container {
     justify-items: start;
     align-items: start;
@@ -757,7 +763,7 @@ button {
     margin-bottom: 3.75rem;
   }
 }
-@media screen and (min-width: 62.5em) {
+@media screen and (min-width: 80em) {
   .crew__title {
     padding-left: 10.40625rem;
     font-size: 1.75rem;
@@ -774,21 +780,20 @@ button {
 .crew__inner-container {
   max-width: 1440px;
   margin: 0 auto;
+  display: grid;
+  grid-template-rows: repeat(2, minmax(min-content, max-content));
+  grid-template-columns: 1fr;
 }
-@media screen and (min-width: 34em) {
+@media screen and (min-width: 80em) {
   .crew__inner-container {
-    display: grid;
-    grid-template-rows: repeat(2, minmax(min-content, max-content));
-  }
-}
-@media screen and (min-width: 62.5em) {
-  .crew__inner-container {
-    display: grid;
+    display: flex;
     align-items: flex-end;
-    grid-template-rows: 1fr;
+    justify-content: space-between;
+    min-height: calc(100vh - 95px - 40px - 40px - 24px);
   }
 }
 .crew__hero-container {
+  grid-row: 1/2;
   display: flex;
   justify-content: center;
   align-items: flex-end;
@@ -798,10 +803,10 @@ button {
     grid-row: 2/-1;
   }
 }
-@media screen and (min-width: 62.5em) {
+@media screen and (min-width: 80em) {
   .crew__hero-container {
-    grid-row: 1/-1;
-    margin-right: 5.59rem;
+    padding-left: 1.25rem;
+    padding-right: 5.6rem;
   }
 }
 .crew__hero-container img {
@@ -813,10 +818,15 @@ button {
     max-height: 33.25rem;
   }
 }
-@media screen and (min-width: 62.5em) {
+@media screen and (min-width: 80em) {
   .crew__hero-container img {
     max-height: none;
+    width: 100%;
   }
+}
+.crew__text-container {
+  grid-row: 2/-1;
+  text-align: center;
 }
 @media screen and (min-width: 34em) {
   .crew__text-container {
@@ -824,13 +834,11 @@ button {
     display: grid;
     grid-template-rows: repeat(2, minmax(min-content, max-content));
     padding: 0 9.6875rem;
-    text-align: center;
     margin-bottom: 2.5rem;
   }
 }
-@media screen and (min-width: 62.5em) {
+@media screen and (min-width: 80em) {
   .crew__text-container {
-    grid-column: 1/2;
     text-align: left;
     padding: 0;
     padding-left: 10.40625rem;
@@ -853,7 +861,7 @@ button {
     padding-top: 0;
   }
 }
-@media screen and (min-width: 62.5em) {
+@media screen and (min-width: 80em) {
   .crew__btn-container {
     justify-content: flex-start;
     margin-bottom: 5.875rem;
@@ -867,7 +875,7 @@ button {
   border-radius: 50%;
   opacity: 0.17;
 }
-@media screen and (min-width: 62.5em) {
+@media screen and (min-width: 80em) {
   .crew__btn {
     width: 15px;
     height: 15px;
@@ -882,7 +890,7 @@ button {
 .crew__btn:not(:last-child) {
   margin-right: 1rem;
 }
-@media screen and (min-width: 62.5em) {
+@media screen and (min-width: 80em) {
   .crew__btn:not(:last-child) {
     margin-right: 1.5rem;
   }
@@ -908,7 +916,7 @@ button {
     line-height: 28px;
   }
 }
-@media screen and (min-width: 62.5em) {
+@media screen and (min-width: 80em) {
   .crew__role {
     font-size: 2rem;
     line-height: 37px;
@@ -930,7 +938,7 @@ button {
     line-height: 46px;
   }
 }
-@media screen and (min-width: 62.5em) {
+@media screen and (min-width: 80em) {
   .crew__name {
     font-size: 3.5rem;
     line-height: 64px;
@@ -949,7 +957,7 @@ button {
     margin-bottom: 2.5rem;
   }
 }
-@media screen and (min-width: 62.5em) {
+@media screen and (min-width: 80em) {
   .crew__bio {
     max-width: 27.75rem;
     font-size: 1.125rem;
@@ -961,12 +969,12 @@ button {
 .technology__container {
   max-width: 1440px;
   margin: 0 auto;
+  display: grid;
 }
 @media screen and (min-width: 62.5em) {
   .technology__container {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(min-content, max-content));
-    grid-template-rows: 1fr;
+    display: flex;
+    justify-content: space-between;
     align-items: center;
     padding-left: 10.40625rem;
     margin-top: 3.75rem;
@@ -982,9 +990,11 @@ button {
   text-transform: uppercase;
   margin-top: 1.5rem;
   margin-bottom: 2rem;
+  text-align: center;
 }
 @media screen and (min-width: 34em) {
   .technology__title {
+    text-align: left;
     padding-left: 2.4375rem;
     font-size: 1.25rem;
     line-height: 1.5rem;
@@ -1008,33 +1018,31 @@ button {
   margin-right: 0.875rem;
 }
 .technology__hero-container {
+  grid-row: 1/2;
   margin-left: -1.6rem;
   margin-right: -1.6rem;
-  margin-bottom: 2rem;
+  display: flex;
+  flex: 0 1 515px;
+  height: 100%;
 }
 @media screen and (min-width: 34em) {
   .technology__hero-container {
     margin: 0;
-    margin-bottom: 3.5rem;
-  }
-}
-@media screen and (min-width: 62.5em) {
-  .technology__hero-container {
-    grid-column: 3/-1;
-    grid-row: 1/-1;
   }
 }
 .technology__hero-container img {
-  width: auto;
+  max-width: 100%;
 }
 .technology__btn-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 2rem;
+  margin-top: 2.125rem;
+  margin-bottom: 1.625rem;
 }
 @media screen and (min-width: 34em) {
   .technology__btn-container {
+    margin-top: 3.5rem;
     margin-bottom: 2.75rem;
   }
 }
@@ -1083,11 +1091,21 @@ button {
 .technology__btn:hover, .technology__btn:focus {
   border-color: #ffffff;
 }
+@media screen and (min-width: 62.5em) {
+  .technology__left-container {
+    display: flex;
+    align-items: center;
+  }
+}
+.technology__text-container {
+  grid-row: 2/-1;
+  text-align: center;
+  margin-bottom: 3.5625rem;
+}
 @media screen and (min-width: 34em) {
   .technology__text-container {
-    text-align: center;
     padding: 0 9.6875rem;
-    padding-bottom: 6.0625rem;
+    margin-bottom: 6.0625rem;
   }
 }
 @media screen and (min-width: 62.5em) {
@@ -1095,9 +1113,11 @@ button {
     grid-column: 2/3;
     grid-row: 1/-1;
     padding: 0;
+    margin-bottom: 0;
     margin-left: 5rem;
     margin-right: 8.125rem;
     text-align: left;
+    max-width: 29.325rem;
   }
 }
 .technology__sub-title {
@@ -1113,6 +1133,7 @@ button {
 @media screen and (min-width: 34em) {
   .technology__sub-title {
     font-size: 1rem;
+    margin-bottom: 1rem;
   }
 }
 @media screen and (min-width: 62.5em) {
@@ -1145,7 +1166,6 @@ button {
 .technology__description {
   line-height: 25px;
   font-weight: 400;
-  margin-bottom: 3.5625rem;
 }
 @media screen and (min-width: 34em) {
   .technology__description {

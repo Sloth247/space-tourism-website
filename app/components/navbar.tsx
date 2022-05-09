@@ -3,7 +3,7 @@ import MenuBtn from './hamburger';
 import { useEffect, useRef, useState } from 'react';
 import { Link } from '@remix-run/react';
 
-export default function navbar({ pageName }) {
+export default function navbar({ pageName }: { pageName: string }) {
   const ref = useRef<HTMLDivElement>(null);
   const [clicked, setClicked] = useState(false);
   const [expanded, setExpanded] = useState(false);
@@ -14,9 +14,10 @@ export default function navbar({ pageName }) {
 
   useEffect(() => {
     const checkIfClickedOutside = (e: any) => {
-      if (clicked && ref.current && !ref.current.contains(e.target))
-        setClicked(false);
-      setExpanded(false);
+      // if (expanded && ref.current && !ref.current.contains(e.target)) {
+      //   setClicked(false);
+      //   setExpanded(false);
+      // }
     };
     const closeMenu = (e: { keyCode: number }) => {
       if (e.keyCode === 27) {
@@ -36,13 +37,9 @@ export default function navbar({ pageName }) {
   return (
     <nav className="nav">
       <Logo />
-      <MenuBtn
-        handleClick={handleClick}
-        expanded={expanded}
-        clicked={clicked}
-      />
+      <MenuBtn handleClick={handleClick} expanded={expanded} />
       <div
-        className={!clicked ? 'nav__container' : 'nav__container active'}
+        className={!expanded ? 'nav__container' : 'nav__container active'}
         id="menu-container"
         ref={ref}
       >
@@ -71,7 +68,4 @@ export default function navbar({ pageName }) {
       </div>
     </nav>
   );
-}
-function data(data: any) {
-  throw new Error('Function not implemented.');
 }

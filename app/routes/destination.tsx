@@ -1,8 +1,16 @@
 import { json, LoaderFunction } from '@remix-run/node';
 import { Link, useSearchParams } from '@remix-run/react';
 // import { useState } from 'react';
+import { motion } from 'framer-motion';
 
 import data from '~/components/data/data.json';
+
+const upAnimation = {
+  key: 'up',
+  initial: { opacity: 0, y: '50%' },
+  animate: { opacity: 1, y: 0 },
+  transition: { duration: 1.5, ease: 'easeInOut' },
+};
 
 export const loader: LoaderFunction = async () => {
   console.log(data);
@@ -16,18 +24,23 @@ export default function destination() {
 
   return (
     <>
-      <h1 className="destination__title">
+      <motion.h1
+        className="destination__title"
+        initial={{ opacity: 0, y: '-200%' }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1.5, ease: 'easeInOut' }}
+      >
         <span>01</span> Pick your destination
-      </h1>
+      </motion.h1>
       <div className="destination__inner">
-        <div className="destination__hero-container">
+        <motion.div className="destination__hero-container" {...upAnimation}>
           <img
             src={data.destinations[pathId].images.png}
             alt=""
             aria-hidden="true"
             className="destination__hero-img"
           />
-        </div>
+        </motion.div>
         <section className="destination__text-container">
           <div className="destination__button-container">
             {data &&
@@ -46,13 +59,13 @@ export default function destination() {
                 </Link>
               ))}
           </div>
-          <h2 className="destination__planet-name">
+          <motion.h2 className="destination__planet-name" {...upAnimation}>
             {data.destinations[pathId].name}
-          </h2>
-          <p className="destination__description">
+          </motion.h2>
+          <motion.p className="destination__description" {...upAnimation}>
             {data.destinations[pathId].description}
-          </p>
-          <div className="destination__stats-container">
+          </motion.p>
+          <motion.div {...upAnimation} className="destination__stats-container">
             <div className="destination__distance-container">
               <h3>Avg. distance</h3>
               <p>{data.destinations[pathId].distance}</p>
@@ -61,7 +74,7 @@ export default function destination() {
               <h3>Est. travel time</h3>
               <p>{data.destinations[pathId].travel}</p>
             </div>
-          </div>
+          </motion.div>
         </section>
       </div>
     </>
